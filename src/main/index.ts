@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { app, BrowserWindow, ipcMain, shell } from 'electron'
 import { join } from 'path'
@@ -11,19 +12,19 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
-    center:true,
-    title:"Notemark",
-    frame:false,
-    
+    center: true,
+    title: 'Notemark',
+    frame: false,
+
     /* frame:false, */
-/*     vibrancy: 'under-window',
- */    /* visualEffectState: 'active',
+    /*     vibrancy: 'under-window',
+     */ /* visualEffectState: 'active',
     titleBarStyle: 'hidden',
     trafficLightPosition: { x: 15, y: 10 },
    */
-    
+
     transparent: true,
-    
+
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
@@ -36,7 +37,7 @@ function createWindow(): void {
     // or Acrylic effect on Windows 10/11 (requires Electron 20+ for 'acrylic').
     // For this to work, the content in renderer (HTML/CSS) should also have a transparent background
     // e.g., body { background-color: transparent; }
-    mainWindow.setBackgroundMaterial('acrylic');
+    mainWindow.setBackgroundMaterial('acrylic')
   }
 
   mainWindow.on('ready-to-show', () => {
